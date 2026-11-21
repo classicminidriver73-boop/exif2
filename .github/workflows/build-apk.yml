@@ -18,7 +18,7 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-     	- name: Usa Android SDK preinstallato
+    
         	run: |
          	 echo "ANDROID_HOME=$ANDROID_HOME"
         	  echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> "$GITHUB_PATH"
