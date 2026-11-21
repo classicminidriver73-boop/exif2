@@ -1,0 +1,19 @@
+ISTRUZIONI - SENZA CARTELLE NASCOSTE
+
+1. Estrai questo ZIP. Apri la cartella EditorEXIF_Android.
+2. Su GitHub apri il repository > Add file > Upload files.
+3. Carica la cartella app e i file .gradle.kts e gradle.properties.
+   Puoi caricare anche gli altri file visibili, compreso WORKFLOW_DA_COPIARE.yml.
+   NON caricare lo ZIP come file unico.
+4. Clicca Commit changes.
+5. Torna alla scheda Code > Add file > Create new file.
+6. Nel campo nome digita ESATTAMENTE: .github/workflows/build-apk.yml
+   (GitHub crea automaticamente le cartelle necessarie, senza farle gestire a Windows.)
+7. Apri WORKFLOW_DA_COPIARE.yml con Blocco note, copia tutto il contenuto
+   e incollalo nell'editor di GitHub.
+8. Clicca Commit changes.
+9. Vai in Actions > Crea EditorEXIF APK > Run workflow.
+10. Se la compilazione riesce, scarica l'artifact EditorEXIF-APK.
+
+ATTENZIONE: il progetto non e' stato ancora compilato e verificato.
+Se il job e' rosso, manda lo screenshot dell'errore per la correzione.

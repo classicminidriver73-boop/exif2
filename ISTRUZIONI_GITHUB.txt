@@ -1,0 +1,23 @@
+COME GENERARE EditorEXIF.apk SENZA ANDROID STUDIO
+
+1. Apri https://github.com/new e crea un repository privato EditorEXIF-Android.
+2. Non aggiungere README o .gitignore.
+3. Estrai questo ZIP sul PC.
+4. Apri la cartella EditorEXIF_Android e trascina su GitHub TUTTI i file
+   e le cartelle AL SUO INTERNO, inclusa la cartella .github.
+   Usa Add file > Upload files.
+   Non caricare solo il file ZIP e non annidare EditorEXIF_Android.
+5. Premi Commit changes.
+6. Apri la scheda Actions e abilita le Actions se richiesto.
+7. Apri Crea EditorEXIF APK > Run workflow > Run workflow.
+   Potrebbe essere gia' partita una compilazione dopo il caricamento.
+8. Apri l'esecuzione. Se compare una spunta verde, scarica
+   EditorEXIF-APK nella sezione Artifacts in fondo alla pagina.
+9. Estrai lo ZIP scaricato: contiene EditorEXIF.apk.
+10. Copialo sul tablet Android e aprilo per installarlo.
+
+Se appare una X rossa, apri il job build e lo step Compila APK di prova.
+Invia uno screenshot del messaggio d'errore per correggere il progetto.
+
+ATTENZIONE: questo progetto non e' stato compilato o collaudato in questo
+ambiente. L'APK generato e' una versione debug per test, non una release.
