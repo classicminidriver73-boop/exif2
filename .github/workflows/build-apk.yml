@@ -1,0 +1,43 @@
+name: Crea EditorEXIF APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Scarica sorgenti
+        uses: actions/checkout@v4
+      - name: Installa Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+     	- name: Usa Android SDK preinstallato
+        	run: |
+         	 echo "ANDROID_HOME=$ANDROID_HOME"
+        	  echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> "$GITHUB_PATH"
+        	  yes | sdkmanager --licenses || true
+      - name: Installa SDK Android 35
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0" "platform-tools"
+      - name: Configura Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Compila APK di prova
+        run: gradle --no-daemon assembleDebug
+      - name: Rinomina APK
+        run: |
+          mkdir -p output
+          cp app/build/outputs/apk/debug/app-debug.apk output/EditorEXIF.apk
+      - name: Rendi APK scaricabile
+        uses: actions/upload-artifact@v4
+        with:
+          name: EditorEXIF-APK
+          path: output/EditorEXIF.apk
+          if-no-files-found: error
